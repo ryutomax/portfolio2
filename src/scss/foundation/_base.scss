@@ -1,0 +1,46 @@
+@import "var" ;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $colorWhite;
+  font-weight: 500;
+  font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+}
+
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,p,li,h1,h2,h3,h4,h5 {
+  line-height: 100%;
+}
+
+// デバッグ用
+// body * {
+//   outline: 1px dotted rgba(255,0,0,0.2) !important;
+// } /* red */
+// body * * {
+//   outline: 1px dotted rgba(0,128,0,0.2) !important;
+// } /* green */
+// body * * * {
+//   outline: 1px dotted rgba(255,165,0,0.2) !important;
+// } /* orange */
+// body * * * * {
+//   outline: 1px dotted rgba(0,0,255,0.2) !important;
+// } /* blue */

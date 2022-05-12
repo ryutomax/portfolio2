@@ -1,0 +1,33 @@
+// animation-name: ; //keyframes
+// animation-duration: ; //duration
+// animation-timing-function: ; //easing
+// animation-delay: ; //delay
+// animation-iteration-count: ; // 1,3,infinite
+// animation-direction: ; //normal,reverse,alternate,alternate-reverse
+// animation-fill-mode: ; //none,forwards,backwards,both
+// animation-play-state: ; //running,paused (animationを止める)
+
+@mixin arrowAnime {
+  animation-name: arrowAnime;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  @keyframes arrowAnime {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 8px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+}
+
+@mixin opaAnime {
+  transition: 0.5s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+

@@ -1,0 +1,13 @@
+.u-db__o-pc {
+  display: none;
+}
+
+@include mq (o-pc) {
+  .u-dn__o-pc {
+    display: none;
+  }
+
+  .u-db__o-pc {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+.l-footer {
+
+  background-color: $colorBeige;
+
+  &__inner {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
+
+  &__address {
+    font-size: 12px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  &__copy {
+    display: block;
+    background-color: $colorWhite;
+    font-size: 10px;
+    font-size: 0.626rem;
+    line-height: 40px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}

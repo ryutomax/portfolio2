@@ -1,0 +1,43 @@
+<header class="l-header u-z-index10">
+  <div class="l-header__inner">
+    <h1 class="c-logo u-z-index10"><a href="#" class="c-logo__link"><img src="<%= path %>logo.png" alt="会社ロゴ" class="c-logo__img"></a></h1>
+
+    <nav class="c-headerNav">
+      <div class="p-header__nav c-headerNav__wrapper js-nav__open">
+        <ul class="c-headerNav__list">
+
+          <% const navText = [
+            {text:"会社ついて"},{text:"私たちについて"},{text:"お客様の声"},{text:"実績"},{text:"お問い合わせ"},
+          ]; %>
+
+          <% for(var i = 0; i < navText.length; i++) {%>
+
+          <li class="c-headerNav__item">
+            <a href="#" class="c-headerNav__link"><%= navText[i].text %></a>
+          </li>
+
+          <% } %>
+
+        </ul>
+          <a href="#" class="c-img__instaLink" target="_blank">
+            <img src="<%= path %>instagram.png" alt="instagram" class="p-header__navInsta c-img__insta">
+          </a>
+      </div>
+      <!-- /.c-headerNav__wrapper -->
+
+      <div class="p-header__navBtn c-navBtn js-nav__btn">
+        <% for(var i = 0; i<3; i++) {%>
+        <span class="c-navBtn__bar"></span>
+        <% } %>
+      </div>
+      <!-- /.c-navBtn -->
+    </nav>
+
+    <div class="p-header__imgs">
+      <a href="#" class="p-header__instaLink" target="_blank"><img src="<%= path %>instagram.png" alt="instagram" class="p-header__insta c-img__insta"></a>
+      <img src="<%= path %>ribon.png" alt="リボン" class="c-img__ribon">
+    </div>
+    <!-- /.l-header__imgs -->
+  </div>
+  <!-- /.l-header__inner -->
+</header>

@@ -1,0 +1,10 @@
+.u-br__o-tb {
+  display: block;
+}
+
+@include mq (o-tb) {
+  .u-br__o-tb {
+      display: none;
+  }
+
+}
