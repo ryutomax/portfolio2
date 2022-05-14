@@ -6,9 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const globImporter = require('node-sass-glob-importer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageminMozjpeg = require('imagemin-mozjpeg');
+
 
 module.exports = (env, argv) => {
   const PRODUCTION = argv.mode === 'production'
@@ -28,7 +26,7 @@ module.exports = (env, argv) => {
         'public/assets/stylesheets',
         'public/assets/javascripts',
       ]),
-      
+
       new MiniCssExtractPlugin({
         filename: PRODUCTION
           ? 'assets/stylesheets/bundle[hash].css'
@@ -43,36 +41,6 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         filename: 'about/index.html',
         template: 'src/ejs/about/index.ejs',
-      }),
-
-      //img
-      new CopyPlugin({
-        patterns: [
-          {
-            from: `${path.resolve(__dirname, 'src')}/img`,
-            to: `${path.resolve(__dirname, 'dist')}/img/[name]_min[ext]`
-          }
-        ]
-      }),
-
-      new ImageminPlugin({
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        pngquant: {
-          quality: '65-80'
-        },
-        gifsicle: {
-          interlaced: false,
-          optimizationLevel: 1,
-          colors: 256
-        },
-        svgo: {
-        },
-        plugins: [
-          ImageminMozjpeg({
-            quality: 85,
-            progressive: true
-          })
-        ]
       }),
 
       // php

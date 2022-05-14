@@ -1,30 +1,52 @@
 <!-- 画像相対パス -->
-<% const path = ["../../assets/images/"]%>
+<% const path = ["./assets/images/"]%>
 
 <footer class="l-footer">
   <div class="l-footer__inner">
-    <nav class="c-footerNav">
-      <ul class="c-footerNav__list">
-        <% const navText = [
-          {text:"会社ついて"},{text:"私たちについて"},{text:"お客様の声"},{text:"実績"},{text:"お知らせ"},{text:"お問い合わせ"},{text:"プライバシーポリシー"},
-        ]; %>
-
-        <% for(var i = 0; i < navText.length; i++ ) {%>
-        <li class="c-footerNav__item">
-          <a href="#" class="c-footerNav__link"><%= navText[i].text %></a>
-        </li>
-        <% } %>
-      </ul>
-    </nav>
-
-    <h1 class="c-footerLogo"><img src="<%= path %>mian-logo.png" alt="メイン会社ロゴ" class="c-footerLogo__img"></h1>
-    <address class="l-footer__address">東京都渋谷区神南1-20-2 第一清水ビル4F</address>
-
-
+    <div class="p-footer__info">
+      <div class="p-footer__meta">
+        <address class="p-footer__address">
+          〒000-0000<br>
+          東京都渋谷区神南1-20-2 第一清水ビル4F<br>
+          営業時間：10:00~19:00<br>
+          土日・祝日定休<br>
+        </address>
+        <div class="p-footer__icons">
+          <img src="<%= path %>icon/facebook_icon.png" alt="facebook" class="p-footer__img">
+          <img src="<%= path %>icon/instagram_icon.svg" alt="Instagram" class="p-footer__img">
+          <img src="<%= path %>icon/line.png" alt="友達追加" class="p-footer__line">
+        </div>
+        <!-- /.p-footer__icons -->
+      </div>
+      <!-- /.p-footer__meta -->
+      <nav class="c-footerNav">
+        <ul class="c-footerNav__list">
+          <% const navText = [
+            {text:"faq/よくある質問"},
+            {text:"お問い合わせ"},
+            {text:"特定商取引法に基づく表記"},
+            {text:"配送・返金ポリシー"},
+            {text:"faq/よくある質問"},
+          ]; %>
+          <% for(var i = 0; i < navText.length; i++) {%>
+          <li class="c-footerNav__item">
+            <a href="#" class="c-footerNav__link"><%= navText[i].text %></a>
+          </li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+    <!-- /.p-footer__info -->
+    <div class="c-footerMail">
+      <h2 class="c-footerMail__ttl">メールマガジン</h2>
+      <p class="c-footerMail__txt">自転車の情報いち早くお届けします</p>
+      <input class="c-footerMail__input" type="text" placeholder="メールアドレス">
+      <a href="#" class="c-footerMail__register">登録する</a>
+    </div>
+    <!-- /.c-footerMail -->
   </div>
   <!-- /.l-footer__inner -->
   <small class="l-footer__copy">&copy;portfolio.Inc all rights reserved</small>
-
 </footer>
 </div><!-- l-wrap -->
 </body>

@@ -1,13 +1,205 @@
 <% var title = "Portfolio"; var description = "このサイトはポートフォリオサイトです。"; %>
 
 <!-- 画像相対パス -->
-<% const path = ["../../assets/images/"]%>
+<% const path = ["./assets/images/"]%>
 
 <% include src/ejs/template/_head %>
 
 <% include src/ejs/template/_header %>
 
+<div class="p-topSlider">
+  <div class="p-topSlider__wrapper">
+    <img src="<%= path %>symbol_white.svg" alt="メインロゴ" class="c-logo">
+    <ul class="p-topSlider__list">
+      <li class="p-topSlider__item"></li>
+      <li class="p-topSlider__item"></li>
+    </ul>
+  </div>
+  <!-- /.p-topSlider__wrapper -->
+</div>
+<!-- /.p-topSlider -->
 
+<div class="p-intro">
+  <div class="p-intro__inner">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NvNvvK66d-g?start=12" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="p-intro__txt">
+      <h2 class="p-intro__ttl">サイクリングで心と体をもっと健康に</h2>
+      <h3 class="p-intro__desc">「最高にかっこいい自転車を楽しんでほしい」<br>サイクリングは日々のストレスを解消し、<br>心身を健康へと導いてくれます。</h3>
+      <a href="#" class="p-intro__more">more</a>
+    </div>
+    <!-- /.p-intro__txt -->
+  </div>
+  <!-- /.p-intro__inner -->
+</div>
+<!-- /.p-intro -->
+
+<div class="p-item">
+  <div class="p-item__inner">
+    <h2 class="c-ttl">item</h2>
+    <ul class="p-item__list">
+      <% const item = [
+      {src: "cycle_s9.jpg", name: "かっこいいロードバイク",},
+      {src: "cycle_s1.jpg", name: "おしゃれなロードバイク",}
+      ]; %>
+
+      <% for(var i = 0; i < item.length; i++) { %>
+      <li class="p-item__item">
+        <a href="#" class="p-item__link">
+          <img src="<%= path %>cycle/<%= item[i].src %>" alt="<%= item[i].name %>" class="p-item__img">
+        </a>
+        <h2 class="p-item__name"><a href="#" class="p-item__link"><%= item[i].name %></a></h2>
+        <a href="#" class="p-item__desc">詳細を見る</a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <!-- /.p-item__inner -->
+</div>
+<!-- /.p-item -->
+
+<div class="p-about">
+  <div class="p-about__inner">
+    <h2 class="c-ttl">about us</h2>
+    <div class="p-about__top">
+      <h3 class="p-about__topTtl">サイクリングで季節を感じよう</h３>
+      <p class="p-about__topTxt">
+        サイクリングをすることで風を感じ、季節を感じよう。
+        いつからでもサイクリングは始められる。
+      </p>
+    </div>
+    <!-- /.p-about__top -->
+    <div class="p-about__main">
+      <ul class="p-about__imgs">
+        <% const imgUpper  = [
+        {src: "cycle_m4.jpg"},
+        {src: "cycle_s1.jpg"},
+        {src: "cycle_m5.jpg"}
+        ]; %>
+        <% for(var i = 0; i < imgUpper.length; i++) { %>
+        <li class="p-about__imgWrap">
+          <img src="<%= path %>cycle/<%= imgUpper[i].src %>" alt="自転車" class="p-about__img">
+        </li>
+        <% } %>
+      </ul>
+      <h3 class="p-about__mainTtl">私が自転車にこだわる理由</h３>
+      <p class="p-about__mainTxt">
+        自転車の動力源は自分の脚力のみ。
+        地球にやさしく、心身の健康維持に最適。
+      </p>
+      <ul class="p-about__imgs">
+        <% const imgBottom  = [
+        {src: "cycle_m7.jpg"},
+        {src: "cycle_s2.jpg"},
+        {src: "cycle_m9.jpg"}
+        ]; %>
+        <% for(var i = 0; i < imgBottom.length; i++) { %>
+        <li class="p-about__imgWrap">
+          <img src="<%= path %>cycle/<%= imgBottom[i].src %>" alt="自転車" class="p-about__img">
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    <!-- /.p-about__main -->
+
+  </div>
+  <!-- /.p-about__inner -->
+</div>
+<!-- /.p-about -->
+
+<div class="p-news">
+  <div class="p-news__inner">
+    <h2 class="p-news__ttl">news</h2>
+    <ul class="p-news__list">
+      <% const news = [
+      {src: "cycle_m1.jpg", ttl:"新しいお知らせです"},
+      {src: "cycle_m4.jpg", ttl:"お知らせです"},
+      {src: "cycle_m5.jpg", ttl:"新しいNewsです"},
+      {src: "cycle_m7.jpg", ttl:"新しい自転車です"},
+      {src: "cycle_m8.jpg", ttl:"新しいロードバイクです"},
+      {src: "cycle_m9.jpg", ttl:"新しいドロップハンドルに変更しました"},
+      ]; %>
+
+      <% for(var i = 0; i < news.length; i++) { %>
+      <li class="p-news__item">
+        <a href="#" class="p-news__link">
+          <img src="<%= path %>cycle/<%= news[i].src %>" alt="自転車" class="p-news__img">
+        </a>
+        <a href="#" class="p-news__link">
+          <h2 class="p-news__itemTtl"><%= news[i].ttl %></h2>
+        </a>
+        <a href="#" class="p-news__more">more</a>
+      </li>
+      <% } %>
+    </ul>
+    <a href="#" class="p-news__all">view all</a>
+  </div>
+  <!-- /.p-news__inner -->
+</div>
+<!-- /.p-news -->
+
+<div class="p-insta">
+  <h2 class="p-insta__ttl">instagram</h2>
+  <ul class="p-insta__list">
+    <% const insta = [
+    {src: "cycle_s1.jpg", },
+    {src: "cycle_s2.jpg", },
+    {src: "cycle_s3.jpg", },
+    {src: "cycle_s4.jpg", },
+    {src: "cycle_s5.jpg", },
+    {src: "cycle_s6.jpg", },
+    {src: "cycle_s7.jpg", },
+    {src: "cycle_s8.jpg", },
+    {src: "cycle_s9.jpg", },
+    ]; %>
+
+    <% for(var i = 0; i < insta.length; i++) { %>
+    <li class="p-insta__item">
+      <img src="<%= path %>icon/instagram_icon.svg" alt="instagram" class="p-insta__icon">
+      <a href="#" class="p-insta__link">
+        <img src="<%= path %>cycle/<%= insta[i].src %> " alt="自転車" class="p-insta__img">
+      </a>
+    </li>
+    <% } %>
+  </ul>
+</div>
+<!-- /.p-insta -->
+
+<div class="p-bicycle">
+  <div class="p-bicycle__inner">
+    <h2 class="c-ttl">bicycle</h2>
+    <ul class="p-bicycle__tabs">
+      <% const bicycle  = [
+      {color: "beige"},
+      {color: "blue"},
+      {color: "black"}
+      ]; %>
+
+      <% for(var i = 0; i < bicycle.length; i++) { %>
+        <li class="p-bicycle__tab"><%= bicycle[i].color %></li>
+      <% } %>
+    </ul>
+    <ul class="p-bicycle__contents">
+      <% const cont = [
+        {src: "cycle_s1.jpg", ttl: "beige bicycle", desc: "一見するとオシャレな普通の自転車。よく見ると原材料畑でできている。"},
+        {src: "cycle_s8.jpg", ttl: "blue bicycle", desc: "オシャレな青色の自転車。扉と相まってかっこよさが引き立つ。"},
+        {src: "cycle_s5.jpg", ttl: "black bicycle", desc: "誰が見てもオシャレな自転車。カゴがついているので実用性も抜群。"},
+        ]; %>
+
+      <% for(var i = 0; i < cont.length; i++) { %>
+      <li class="p-bicycle__content">
+        <img src="<%= path %>cycle/<%= cont[i].src %>" alt="自転車" class="p-bicycle__img">
+        <div class="p-bicycle__text">
+          <h2 class="p-bicycle__ttl"><%= cont[i].ttl %></h2>
+          <p class="p-bicycle__desc"><%= cont[i].desc %></p>
+        </div>
+        <!-- /.p-bicycle__text -->
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <!-- /.p-bicycle__inner -->
+</div>
+<!-- /.p-bicycle -->
 
 
 <% include src/ejs/template/_footer %>
