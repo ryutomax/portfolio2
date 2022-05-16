@@ -1,0 +1,97 @@
+.c-headerNav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  background-color: $colorWhite;
+  overflow: hidden;
+  transition: 0.2s;
+
+  &__list,
+  &__listSub {
+    padding-right: 24px;
+    padding-left: 18px;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  &__list {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    display: block;
+    padding: 24px 0;
+    border-bottom: 1px solid $colorGray;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    &::after {
+      height: 0;
+    }
+    @include opaAnime;
+  }
+
+  &__listSub {
+    margin-bottom: -20px;
+  }
+
+  &__itemSub {
+    margin-bottom: 20px;
+  }
+
+  &__linkSub {
+    color: $colorBlack;
+    opacity: 0.5;
+    font-size: 14px;
+    font-size: 0.875rem;
+    transition: 0.5s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@include mq (o-bigPc) {
+  .c-headerNav {
+    position: static;
+    width: auto;
+    height: auto;
+    margin-right: auto;
+    margin-left: 64px;
+    padding-top: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    overflow: visible;
+    &__list,
+    &__listSub {
+      opacity: 1;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    &__item {
+      margin-right: 40px;
+    }
+
+    &__link {
+      padding: 0;
+      border-bottom: none;
+      color: $colorWhite;
+      @include textLine;
+    }
+
+    &__listSub {
+      display: none;
+    }
+  }
+}

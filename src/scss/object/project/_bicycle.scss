@@ -1,0 +1,124 @@
+.p-bicycle {
+  padding-top: 40px;
+  background-color: $colorGrayLight;
+  &__inner {
+    max-width: 1100px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__ttl {
+    top: -60px;
+    left: 20px
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+  }
+
+  &__tab {
+    position: relative;
+    padding: 20px;
+    color: $colorGray;
+    font-size: 11px;
+    font-size: calc((11/16)*1rem);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 20px;
+      width: calc(100% - 40px);
+      height: 3px;
+      background-color: $colorBlack;
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: opacity .3s,transform .3s;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__img {
+    opacity: 0;
+  }
+
+  &__txt {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding: 100px 16px;
+    background-color: $colorBlack06;
+    color: $colorWhite;
+    text-align: center;
+  }
+
+  &__contTtl {
+    margin-bottom: 32px;
+    font-size: 20px;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    opacity: 0;
+  }
+
+  &__desc {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 2;
+    opacity: 0;
+  }
+}
+
+@include mq (o-sp) {
+  .p-bicycle {
+    padding: 80px 16px;
+    &__ttl {
+      top: -100px;
+      left: 20px
+    }
+
+    &__content {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__tabs {
+      width: 280px;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-bottom: 48px;
+    }
+
+    &__contents {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    &__img {
+      width: 50%;
+      height: 515px;
+      object-fit: cover;
+    }
+
+    &__txt {
+      width: 50%;
+      height: 100%;
+      position: relative;
+      top: 0;
+      padding: 80px 60px;
+      background-color: $colorGrayLight;
+      color: $colorBlack;
+      text-align: left;
+    }
+  }
+}

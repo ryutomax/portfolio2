@@ -1,0 +1,26 @@
+.c-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid $colorGray;
+  &__link {
+    opacity: 0.5;
+    transition: 0.5s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__facebook {
+    width: 15px;
+  }
+
+  &__insta {
+    width: 20px;
+  }
+
+  &__path {
+    fill: $colorBlack;
+  }
+}

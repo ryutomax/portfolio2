@@ -42,7 +42,8 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "swiper": "^8.1.4"
   },
   "browserslist": [
     "> 1%",

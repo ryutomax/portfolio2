@@ -1,7 +1,10 @@
+//ハンバーガーメニュー
+
 .is-btn__active {
   .c-navBtn__bar {
+    background-color: $colorBlack;
     &:nth-child(1) {
-      transform: translateY(9px)  rotate(-45deg);
+      transform: translateY(7.5px)  rotate(-45deg);
     }
 
     &:nth-child(2) {
@@ -9,11 +12,126 @@
     }
 
     &:last-child {
-      transform: translateY(-8px) rotate(-135deg);
+      transform: translateY(-7.5px) rotate(-135deg);
     }
   }
 }
 
-.is-menu__open {
+.is-black {
+  position: fixed;
+  width: 100vw;
   height: 100vh;
+  background-color: $colorBlack06;
+  z-index: 10;
+}
+
+.is-menu__open {
+  width: 320px;
+}
+
+
+.is-slideIn__menu {
+  animation-name: slideIn;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-30%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+// ========================
+//  top スライドショー
+// =========================
+
+.is-current {
+  opacity: 1;
+}
+
+// =========================
+// bicycle tab
+// =========================
+
+.is-tabActive {
+  color: $colorBlack;
+  font-size: 18px;
+  font-size: 1.125rem;
+
+  &::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.is-tabHidden {
+  display: none;
+}
+
+.is-fadeIn {
+  animation-name: fadeIn;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.is-fadeIn-delay {
+  animation-name: fadeIn;
+  animation-delay: 0.7s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(30%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.is-slideIn {
+  animation-name: slideIn;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-30%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.is-slideIn__tab {
+  animation-name: slideIn;
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-5%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
 }

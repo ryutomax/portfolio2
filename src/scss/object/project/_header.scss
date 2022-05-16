@@ -1,0 +1,17 @@
+.p-header {
+  &__navIcon {
+    opacity: 0;
+  }
+}
+
+@include mq (o-bigPc) {
+  .p-header {
+    &__navIcon {
+      display: none;
+    }
+
+    &__navList {
+      color: $colorWhite;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.c-navBtn {
+  position: relative;
+  width: 24px;
+  height: 17px;
+
+  &__bar {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $colorWhite;
+    transition: 0.5s;
+    &:nth-child(1) {
+    }
+    &:nth-child(2) {
+      top: calc(50% - 1px);
+    }
+    &:nth-child(3) {
+      bottom: 0;
+    }
+  }
+}

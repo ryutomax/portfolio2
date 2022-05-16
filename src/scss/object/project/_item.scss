@@ -1,0 +1,59 @@
+.p-item {
+  &__inner {
+    position: relative;
+  }
+
+  &__ttl {
+    top: -134px;
+  }
+
+  &__item {
+    &:first-child {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__txt {
+    padding: 40px 16px 0 16px;
+    text-align: center;
+  }
+
+  &__name {
+    margin-bottom: 32px;
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+
+  &__desc {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid $colorBlack;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 55px;
+    transition: 0.5s;
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorBlack;
+    }
+  }
+}
+
+@include mq (o-tb) {
+  .p-item {
+    &__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__item {
+      &:first-child {
+        margin-right: 64px;
+      }
+    }
+  }
+}

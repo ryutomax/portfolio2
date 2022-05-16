@@ -1,0 +1,171 @@
+.p-about {
+  padding: 40px 0;
+  background-color: $colorYellow;
+
+  &__inner {
+    max-width: 1100px;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+
+  &__ttl {
+    top: -16px;
+    left: 20px;
+    font-size: 32px;
+    font-size: 2rem;
+  }
+
+  &__top {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  &__topImg {
+    margin-bottom: 24px;
+    opacity: 0;
+  }
+
+  &__topTxt {
+    padding: 0 16px;
+  }
+
+  &__topTtl,
+  &__mainTtl {
+    margin-bottom: 24px;
+    border-bottom: 1px solid $colorBlack;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__topDesc,
+  &__mainDesc {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 2;
+  }
+
+  &__main {
+    padding: 0 16px;
+  }
+
+  &__list {
+    &:first-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item,
+  &__item-bottom {
+    width: 55%;
+    opacity: 0;
+    &:nth-child(2) {
+      width: 50%;
+      z-index: 1;
+    }
+    &:nth-child(n+2) {
+      margin-top: -60px;
+    }
+  }
+
+  &__item {
+    &:nth-child(2) {
+      margin-left: auto;
+    }
+    &-bottom {
+      &:nth-child(odd) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__mainTxt {
+    margin-bottom: 40px;
+  }
+
+  &__mainTtl {
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+}
+
+@include mq (o-tb) {
+  .p-about {
+    padding: 80px 0;
+    &__ttl {
+      top: 28px;
+      left: 280px;
+      font-size: 32px;
+      font-size: 2rem;
+    }
+
+    &__top {
+      display: flex;
+      margin-bottom: 100px;
+    }
+
+    &__topImg {
+      width: 50%;
+      max-width: 400px;
+      margin-right: 32px;
+      margin-left: -32px;
+    }
+
+    &__topTxt {
+      padding: 0 16px;
+      padding-top: 100px;
+    }
+
+    &__topTtl,
+    &__mainTtl {
+      font-size: 24px;
+      font-size: 1.5rem;
+    }
+
+    &__topDesc,
+    &__mainDesc {
+      font-size: 16px;
+      font-size: 1rem;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__item,
+    &__item-bottom {
+      width: 30%;
+      &:nth-child(n+2) {
+        margin-top: 0px;
+      }
+      &:nth-child(2) {
+        width: 25%;
+        margin-top: 64px;
+        margin-right: -20px;
+        margin-left: -20px;
+      }
+
+    }
+
+    &__item {
+      &:nth-child(2) {
+      }
+      &-bottom {
+        &:nth-child(odd) {
+          margin-left: -20px;
+        }
+      }
+    }
+
+    &__mainTxt {
+      max-width: 740px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+}

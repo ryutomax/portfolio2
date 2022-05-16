@@ -1,0 +1,15 @@
+.c-footerNav {
+  &__list {
+    margin-bottom: calc(-16px + 64px);
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-size: 0.875rem;
+    @include opaAnime;
+  }
+}

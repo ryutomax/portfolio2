@@ -1,5 +1,6 @@
 import Home from '../pages/Home'
 import About from '../pages/About'
+import Anime from '../pages/Anime'
 
 export default class Router {
   constructor() {
@@ -7,17 +8,18 @@ export default class Router {
       pathName: location.pathname,
     }
 
-    this.initRouting()
+    this.initRouting();
   }
 
   initRouting() {
     const pathName = this.model.pathName
     switch (pathName) {
       case '/':
-        new Home()
+        new Home();
+        new Anime();
         break
       case '/about':
-        new About()
+        new About();
         break
       default:
         break

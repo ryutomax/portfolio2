@@ -1,0 +1,80 @@
+.p-footer{
+  &__meta {
+    margin-bottom: 64px;
+  }
+
+  &__address {
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__facebook,
+  &__instagram,
+  &__line {
+    @include opaAnime;
+  }
+
+  &__facebook {
+    width: 14px;
+    margin-right: 32px;
+  }
+
+  &__instagram {
+    width: 20px;
+    path {
+      fill: $colorBlack;
+    }
+  }
+
+  &__line {
+    display: block;
+    width: 100px;
+  }
+}
+
+@include mq (o-sp) {
+  .p-footer{
+    &__info {
+      display: flex;
+    }
+
+    &__nav {
+      width: 50%;
+    }
+
+    &__meta {
+      width: 50%;
+    }
+  }
+}
+
+@include mq (o-bigPc) {
+  .p-footer{
+    &__info {
+      width: 70%;
+      justify-content: space-between;
+    }
+
+    &__nav {
+      width: 30%;
+    }
+
+    &__meta {
+      width: 30%;
+      margin-right: 0px;
+    }
+
+    &__mail {
+      width: 30%;
+    }
+  }
+}

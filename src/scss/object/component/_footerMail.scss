@@ -1,0 +1,48 @@
+.c-footerMail {
+  &__ttl,
+  &__txt,
+  &__input {
+    margin-bottom: 24px;
+  }
+
+  &__ttl {
+    font-size: 12px;
+    font-size: 0.75rem;
+  }
+
+  &__txt {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid $colorGray;
+    color: $colorBlack;
+    font-size: 14px;
+    font-size: 0.875rem;
+    &::placeholder {
+      color: $colorBlack;
+    }
+    &:focus {
+      border: 1px solid $colorBlack;
+    }
+  }
+
+  &__register {
+    display: block;
+    width: 185px;
+    border: 1px solid $colorPurple;
+    background-color: $colorPurple;
+    color: $colorWhite;
+    font-size: 12px;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 44px;
+    @include btn-anime-l($colorWhite, 0px);
+    &:hover {
+      color: $colorPurple;
+    }
+  }
+}
