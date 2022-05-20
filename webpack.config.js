@@ -2,11 +2,10 @@
 const path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const globImporter = require('node-sass-glob-importer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
 
 module.exports = (env, argv) => {
   const PRODUCTION = argv.mode === 'production'
@@ -16,20 +15,20 @@ module.exports = (env, argv) => {
 
     output: {
       filename: PRODUCTION
-        ? 'assets/javascripts/bundle[hash].js'
+        ? 'assets/javascripts/bundle-[hash].js'
         : 'assets/javascripts/bundle.js',
-      path: path.join(__dirname, 'public'),
+      path: path.join(__dirname, 'dist'),
     },
 
     plugins: [
       new CleanWebpackPlugin([
-        'public/assets/stylesheets',
-        'public/assets/javascripts',
+        'dist/assets/stylesheets',
+        'dist/assets/javascripts',
       ]),
 
       new MiniCssExtractPlugin({
         filename: PRODUCTION
-          ? 'assets/stylesheets/bundle[hash].css'
+          ? 'assets/stylesheets/bundle-[hash].css'
           : 'assets/stylesheets/bundle.css',
       }),
 
@@ -49,7 +48,7 @@ module.exports = (env, argv) => {
           ? [
               {
                 from: './src/api/*.php',
-                to: path.resolve(__dirname, 'public/api'),
+                to: path.resolve(__dirname, 'dist/api'),
                 flatten: true,
               },
             ]
@@ -88,7 +87,7 @@ module.exports = (env, argv) => {
             {
               loader: 'css-loader',
               options: {
-                url: false,// sassで相対パスを書けるようにする
+                url: false, // sassで相対パスを書けるようにする
                 sourceMap: true,
               },
             },
@@ -101,7 +100,7 @@ module.exports = (env, argv) => {
                     preset: 'default',
                   }),
                   require('autoprefixer')({
-                    grid: true
+                    grid: true,
                   }),
                 ],
               },
@@ -136,7 +135,7 @@ module.exports = (env, argv) => {
       ],
     },
     devServer: {
-      contentBase: path.resolve(__dirname, 'public'),
+      contentBase: path.resolve(__dirname, 'dist'),
       port: 8080,
       open: true,
     },
