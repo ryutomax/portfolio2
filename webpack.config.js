@@ -1,10 +1,10 @@
-// const webpack = require('webpack')
-const path = require('path')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const globImporter = require('node-sass-glob-importer')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const globImporter = require('node-sass-glob-importer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
@@ -86,16 +86,20 @@ module.exports = (env, argv) => {
       ],
     },
     devtool: PRODUCTION ? 'none' : 'source-map',
+
     optimization: {
       minimizer: PRODUCTION
         ? [
-            new UglifyJSPlugin({
-              uglifyOptions: {
-                compress: {
-                  drop_console: true,
-                },
-              },
-            }),
+            // new UglifyJSPlugin({
+            //   uglifyOptions: {
+            //     compress: {
+            //       drop_console: true,
+            //     },
+            //   },
+            // }),
+            new TerserPlugin({
+              extractComments: false
+            })
           ]
         : [],
     },
