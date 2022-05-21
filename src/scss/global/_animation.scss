@@ -6,6 +6,7 @@
 // animation-direction: ; //normal,reverse,alternate,alternate-reverse
 // animation-fill-mode: ; //none,forwards,backwards,both
 // animation-play-state: ; //running,paused (animationを止める)
+@use "var" as *;
 
 @mixin arrowAnime {
   animation-name: arrowAnime;

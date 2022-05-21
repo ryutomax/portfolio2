@@ -1,7 +1,14 @@
-@use "foundation/*.scss";
+@use "global/*";
 
-@use "component/*.scss";
+@use "foundation/reset";
+@use "foundation/base";
+@use "foundation/font";
 
-@use "project/*.scss";
+@use "layout/*";
 
-@use "utility/*.scss";
+@use "object/component/*";
+
+@use "object/project/**";
+
+
+@use "object/utility/*";

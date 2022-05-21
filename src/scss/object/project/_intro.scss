@@ -1,3 +1,5 @@
+@use "global" as *;
+
 .p-intro {
   background-color: $colorYellow;
   &__inner {

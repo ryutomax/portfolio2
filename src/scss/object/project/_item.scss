@@ -1,3 +1,5 @@
+@use "global" as *;
+
 .p-item {
   &__inner {
     position: relative;
