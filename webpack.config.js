@@ -138,6 +138,7 @@ module.exports = (env, argv) => {
               loader: 'sass-loader',
               options: {
                 importer: globImporter(),
+                // implementation: require("sass"),
                 sourceMap: true,
               },
             },
