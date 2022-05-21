@@ -40,8 +40,8 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "fibers": "^5.0.1",
     "jquery": "^3.4.1",
-    "node-sass": "^7.0.1",
     "sass": "^1.52.1",
     "swiper": "^8.1.4",
     "terser-webpack-plugin": "4.2.3"
