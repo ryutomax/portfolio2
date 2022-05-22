@@ -1,3 +1,5 @@
+@use 'global' as *;
+
 .c-headerNav {
   display: flex;
   flex-direction: column;
@@ -58,7 +60,7 @@
   }
 }
 
-@include mq (o-bigPc) {
+@include mq(o-bigPc) {
   .c-headerNav {
     position: static;
     width: auto;

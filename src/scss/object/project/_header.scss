@@ -1,10 +1,12 @@
+@use 'global' as *;
+
 .p-header {
   &__navIcon {
     opacity: 0;
   }
 }
 
-@include mq (o-bigPc) {
+@include mq(o-bigPc) {
   .p-header {
     &__navIcon {
       display: none;

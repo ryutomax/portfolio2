@@ -1,3 +1,5 @@
+@use "global" as *;
+
 .c-footerNav {
   &__list {
     margin-bottom: calc(-16px + 64px);

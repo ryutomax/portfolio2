@@ -1,3 +1,5 @@
+@use 'global' as *;
+
 .p-news {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -68,7 +70,7 @@
   }
 }
 
-@include mq (o-sp) {
+@include mq(o-sp) {
   .p-news {
     &__list {
       display: flex;
@@ -76,7 +78,7 @@
     }
 
     &__item {
-      width: calc((100% - 30px)/2);
+      width: calc((100% - 30px) / 2);
       &:nth-child(odd) {
         margin-right: 30px;
       }
@@ -84,11 +86,10 @@
   }
 }
 
-@include mq (o-pc) {
+@include mq(o-pc) {
   .p-news {
-
     &__item {
-      width: calc((100% - 60px)/3);
+      width: calc((100% - 60px) / 3);
       &:nth-child(odd) {
         margin-right: 0px;
       }

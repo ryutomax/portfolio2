@@ -1,3 +1,5 @@
+@use 'global' as *;
+
 .p-bicycle {
   padding-top: 40px;
   background-color: $colorGrayLight;
@@ -9,7 +11,7 @@
 
   &__ttl {
     top: -60px;
-    left: 20px
+    left: 20px;
   }
 
   &__tabs {
@@ -24,13 +26,13 @@
     padding: 20px;
     color: $colorGray;
     font-size: 11px;
-    font-size: calc((11/16)*1rem);
+    font-size: calc((11 / 16) * 1rem);
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.5s;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -1px;
       left: 20px;
@@ -40,7 +42,7 @@
       opacity: 0;
       transform: scaleX(0);
       transform-origin: left center;
-      transition: opacity .3s,transform .3s;
+      transition: opacity 0.3s, transform 0.3s;
     }
   }
 
@@ -79,12 +81,12 @@
   }
 }
 
-@include mq (o-sp) {
+@include mq(o-sp) {
   .p-bicycle {
     padding: 80px 16px;
     &__ttl {
       top: -100px;
-      left: 20px
+      left: 20px;
     }
 
     &__content {

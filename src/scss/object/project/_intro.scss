@@ -1,3 +1,5 @@
+@use 'global' as *;
+
 .p-intro {
   background-color: $colorYellow;
   &__inner {
@@ -49,7 +51,7 @@
   }
 }
 
-@include mq (o-sp) {
+@include mq(o-sp) {
   .p-intro {
     &__inner {
       max-width: 1100px;

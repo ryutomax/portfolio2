@@ -1,10 +1,11 @@
+@use 'global' as *;
+
 .u-br__o-tb {
   display: block;
 }
 
-@include mq (o-tb) {
+@include mq(o-tb) {
   .u-br__o-tb {
-      display: none;
+    display: none;
   }
-
 }

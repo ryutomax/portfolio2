@@ -1,3 +1,5 @@
+@use 'global' as *;
+
 .p-about {
   padding: 40px 0;
   background-color: $colorYellow;
@@ -65,7 +67,7 @@
       width: 50%;
       z-index: 1;
     }
-    &:nth-child(n+2) {
+    &:nth-child(n + 2) {
       margin-top: -60px;
     }
   }
@@ -89,10 +91,9 @@
     font-weight: bold;
     line-height: 1.5;
   }
-
 }
 
-@include mq (o-tb) {
+@include mq(o-tb) {
   .p-about {
     padding: 80px 0;
     &__ttl {
@@ -139,7 +140,7 @@
     &__item,
     &__item-bottom {
       width: 30%;
-      &:nth-child(n+2) {
+      &:nth-child(n + 2) {
         margin-top: 0px;
       }
       &:nth-child(2) {
@@ -148,7 +149,6 @@
         margin-right: -20px;
         margin-left: -20px;
       }
-
     }
 
     &__item {

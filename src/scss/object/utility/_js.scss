@@ -1,5 +1,6 @@
-//ハンバーガーメニュー
+@use "global" as *;
 
+//ハンバーガーメニュー
 .is-btn__active {
   .c-navBtn__bar {
     background-color: $colorBlack;
