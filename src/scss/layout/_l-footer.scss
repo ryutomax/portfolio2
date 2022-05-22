@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 .l-footer {
   padding: 32px 24px;
@@ -13,13 +13,13 @@
     display: block;
     padding: 60px 0;
     font-size: 11px;
-    font-size: calc((11/16)*1rem);
+    font-size: calc((11 / 16) * 1rem);
     text-align: center;
     letter-spacing: 0.1em;
   }
 }
 
-@include mq (o-sp) {
+@include mq(o-sp) {
   .l-footer {
     padding-top: 75px;
 
@@ -30,8 +30,8 @@
   }
 }
 
-@include mq (o-bigPc) {
-  .l-footer{
+@include mq(o-bigPc) {
+  .l-footer {
     &__inner {
       display: flex;
       justify-content: space-between;

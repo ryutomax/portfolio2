@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 .c-headerNav {
   display: flex;
@@ -60,7 +60,7 @@
   }
 }
 
-@include mq (o-bigPc) {
+@include mq(o-bigPc) {
   .c-headerNav {
     position: static;
     width: auto;

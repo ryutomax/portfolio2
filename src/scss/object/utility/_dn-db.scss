@@ -1,10 +1,10 @@
-@use "global" as *;
+@use 'global' as *;
 
 .u-db__o-pc {
   display: none;
 }
 
-@include mq (o-pc) {
+@include mq(o-pc) {
   .u-dn__o-pc {
     display: none;
   }

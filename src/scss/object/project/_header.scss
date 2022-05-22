@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 .p-header {
   &__navIcon {
@@ -6,7 +6,7 @@
   }
 }
 
-@include mq (o-bigPc) {
+@include mq(o-bigPc) {
   .p-header {
     &__navIcon {
       display: none;

@@ -1,9 +1,10 @@
-@use "global" as *;
+@use 'global' as *;
 
 .c-headerIcon {
   display: flex;
   align-items: center;
-  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg)
+    brightness(107%) contrast(101%);
   &__account {
     display: none;
     width: 20px;
@@ -14,7 +15,7 @@
   }
 }
 
-@include mq (o-sp) {
+@include mq(o-sp) {
   .c-headerIcon {
     &__account {
       display: block;

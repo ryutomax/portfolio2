@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 .l-header {
   position: fixed;
@@ -40,7 +40,7 @@
   }
 }
 
-@include mq (o-bigPc) {
+@include mq(o-bigPc) {
   .l-header {
     &:hover {
       .l-header__navLink {

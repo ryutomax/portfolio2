@@ -1,38 +1,30 @@
 // breakpoint
 
-// $breakSP-s: 414;
-// $breakSP: 640;
-// $breakTB: 768;
-// // $breakBigTB: 900;
-// $breakPC: 1008;
-// $breakBigPC: 1140;
-// $breakpoints: (
-//   // 'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
-//   'o-sp-s': 'print, screen and (min-width: #{$breakSP-s + 1}px)',
-//   'o-sp': 'print, screen and (min-width: #{$breakSP + 1}px)',
-//   'o-tb': 'print, screen and (min-width: #{$breakTB + 1}px)',
-//   // 'o-bigTb': 'print, screen and (min-width: #{$breakBigTB + 1}px)',
-//   // 'sp-pc':
-//   //   'print, screen and (max-width: #{$breakPC}px) and (min-width: #{$breakSP + 1}px)',
-//   'o-pc': 'print, screen and (min-width: #{$breakPC + 1}px)',
-//   'o-bigPc': 'print, screen and (min-width: #{$breakBigPC + 1}px)',
-// ) !default;
+$SP-s: 414;
+$SP: 640;
+$TB: 768;
+$PC: 1008;
+$BigPC: 1140;
 
 $breakpoints : (
-    "pc":"screen and (max-width:1024px)",
-    "tb":"screen and (max-width:600px)",
-    "sp":"screen and (max-width:480px)"
-);
+  // "sp":"screen and (max-width:#{$SP}px)"
+  // 'sp-pc': 'print, screen and (max-width: #{$PC}px) and (min-width: #{$SP + 1}px)',
+  "o-sp-s" :"print, screen and (min-width:#{$SP-s + 1}px)",
+  "o-sp"   :"print, screen and (min-width:#{$SP + 1}px)",
+  "o-tb"   :"print, screen and (min-width:#{$TB + 1}px)",
+  "o-pc"   :"print, screen and (min-width:#{$PC + 1}px)",
+  "o-bigPc":"print, screen and (min-width:#{$BigPC + 1}px)",
+)!default;
 
-@mixin mq($breakpoint:tb){
-    @media #{map-get($breakpoints, $breakpoint)}{
-        @content;
-    }
-}
+// @mixin mq($breakpoint) {
+//   @media #{inspect(map-get($breakpoints, $breakpoint))} {
+//     @content;
+//   }
+// }
 
-@mixin mq($breakpoint) {
-  @media #{inspect(map-get($breakpoints, $breakpoint))} {
-    @content;
+@mixin mq($breakpoint){
+  @media #{map-get($breakpoints, $breakpoint)}{
+      @content;
   }
 }
 

@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 .p-topSlider {
   position: relative;
@@ -28,7 +28,7 @@
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     &:nth-child(1) {
       background-image: url('../../assets/images/slide/slide_1_sp.jpg');
     }
@@ -41,7 +41,7 @@
   }
 }
 
-@include mq (o-sp-s) {
+@include mq(o-sp-s) {
   .p-topSlider {
     &__symbol {
       width: 100px;
@@ -49,7 +49,7 @@
   }
 }
 
-@include mq (o-tb) {
+@include mq(o-tb) {
   .p-topSlider {
     height: 100vh;
     overflow: hidden;
@@ -65,7 +65,7 @@
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat;
-      transition: opacity .3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
       &:nth-child(1) {
         background-image: url('../../assets/images/slide/slide_1.jpg');
       }
