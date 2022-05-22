@@ -40,6 +40,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "gulp-csscomb": "^3.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",

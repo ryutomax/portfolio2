@@ -505,7 +505,9 @@ body {
 }
 
 .c-logo__img {
+  display: inline;
   width: 100px;
+  font-size: large;
 }
 
 .c-navBtn {
