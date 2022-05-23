@@ -2,10 +2,7 @@ import $ from 'jquery'
 
 export default class Anime {
   constructor() {
-    console.log('home!!')
-    $.ajax({ url: '/api/contact.php' }).then(data => {
-      console.log(data)
-    })
+    console.log('home!!');
   }
 }
 

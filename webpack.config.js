@@ -84,6 +84,7 @@ module.exports = (env, argv) => {
               options: {
                 url: false, // sassで相対パスを書けるようにする
                 sourceMap: true,
+                esModule: false,
               },
             },
             {

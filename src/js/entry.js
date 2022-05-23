@@ -3,7 +3,7 @@ import router from './modules/Router'
 import '../css/app.css'
 
 $(() => {
-  new router()
+  new router();
 
   const hoge = 'hoge'
   console.log(hoge)
