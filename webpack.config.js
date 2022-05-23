@@ -1,3 +1,5 @@
+"use strict";
+
 const path = require('path');
 
 const TerserPlugin = require("terser-webpack-plugin");
@@ -5,8 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
-const ImageminMozjpeg = require("imagemin-mozjpeg");
+// const ImageminPlugin = require("imagemin-webpack-plugin").default;
+// const ImageminMozjpeg = require("imagemin-mozjpeg");
 
 module.exports = (env, argv) => {
   const PRODUCTION = argv.mode === 'production'
@@ -51,50 +53,18 @@ module.exports = (env, argv) => {
                 to: path.resolve(__dirname, 'dist/api'),
                 flatten: true,
               },
-              //圧縮した画像をsrcのimagesフォルダからコピーして、distのimagesフォルダに出力する
-              {
-                from: `${path.resolve(__dirname, "src")}/images/`,
-                to: `${path.resolve(__dirname, "dist/assets/")}/images/[name]-min.[ext]`
-              },
             ]
           : []
       ),
-      new ImageminPlugin({ //画像圧縮処理の指定
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        plugins: [
-          ImageminMozjpeg({
-            quality: 75,
-            progressive: true
-          })
-        ],
-        pngquant: {
-          quality: "70"
-        },
-        gifsicle: {
-          interlaced: false,
-          optimizationLevel: 10,
-          colors: 256
-        },
-        svgo: {}
-      })
     ],
     resolve: {
-      extensions: [
-        '.js', // for style-loader
-      ],
+      extensions: ['.js', ], // for style-loader
     },
     devtool: PRODUCTION ? 'none' : 'source-map',
 
     optimization: {
       minimizer: PRODUCTION
         ? [
-            // new UglifyJSPlugin({
-            //   uglifyOptions: {
-            //     compress: {
-            //       drop_console: true,
-            //     },
-            //   },
-            // }),
             new TerserPlugin({
               extractComments: false
             })
