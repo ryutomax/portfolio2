@@ -9,11 +9,10 @@ const { src, dest, watch, series, parallel } = require("gulp");
 const plumber = require("gulp-plumber");
 const sassGlob = require("gulp-sass-glob-use-forward");
 const sass = require('gulp-sass')(require('sass'));
-// const autoprefixer = require("gulp-autoprefixer");
 const postcss = require('gulp-postcss');
 const cssDeclarationSorter = require('css-declaration-sorter');
 
-function compile(done) {
+const compile = (done)=> {
   src("./src/scss/**/*.scss")
 
   .pipe( plumber() )                   // watch中にエラーが発生してもwatchが止まらないようにする
@@ -26,10 +25,7 @@ function compile(done) {
 
   done();
 }
-function sassWatch() {
-  watch("./src/scss/**/*.scss" , series(compile));
-}
-exports.watch = series(sassWatch);
+const watchSass = () => watch("./src/scss/**/*.scss", compile);
 
 // ========================================
 // img最適化
@@ -40,7 +36,7 @@ const mozjpeg = require("imagemin-mozjpeg");
 const pngquant = require("imagemin-pngquant");
 const changed = require("gulp-changed");
 
-function imagemin(done) {
+const imgmin = (done)=> {
   src("./src/images/*")
   .pipe(changed("./dist/assets/images/[name]-min"))
   .pipe(
@@ -56,11 +52,12 @@ function imagemin(done) {
     ])
   )
   .pipe(dest("./dist/assets/images/"));
+
   done();
 }
-function imgWatch() {
-  watch("./src/images/*" , series(imagemin));
-}
-exports.imgwatch = series(imgWatch);
+const imgMin = ()=> watch("./src/images/*" , series(imgmin));
 
-// exports.imgMin = imagemin;
+// =========================
+// parallel：並列処理
+// =========================
+exports.def = parallel(imgMin, watchSass);

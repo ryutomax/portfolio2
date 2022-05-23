@@ -35,7 +35,6 @@ module.exports = (env, argv) => {
 
       // ejs
       new HtmlWebpackPlugin({
-        // inject: head,
         filename: 'index.html',
         template: 'src/ejs/index.ejs',
       }),
@@ -133,15 +132,6 @@ module.exports = (env, argv) => {
                 ],
               },
             },
-            // {
-            //   loader: 'sass-loader',
-            //   options: {
-            //     // importer: globImporter(),
-            //     implementation: require("sass"),
-            //     // fiber: Fiber,
-            //     sourceMap: true,
-            //   },
-            // },
           ],
         },
         {
