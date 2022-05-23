@@ -1,10 +1,8 @@
 const path = require('path');
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const globImporter = require('node-sass-glob-importer');
-// const Fiber = require('fibers')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
@@ -37,7 +35,6 @@ module.exports = (env, argv) => {
 
       // ejs
       new HtmlWebpackPlugin({
-        // inject: head,
         filename: 'index.html',
         template: 'src/ejs/index.ejs',
       }),
@@ -135,15 +132,6 @@ module.exports = (env, argv) => {
                 ],
               },
             },
-            // {
-            //   loader: 'sass-loader',
-            //   options: {
-            //     // importer: globImporter(),
-            //     implementation: require("sass"),
-            //     // fiber: Fiber,
-            //     sourceMap: true,
-            //   },
-            // },
           ],
         },
         {
