@@ -77,6 +77,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
+          // test: /node_modules\/(.+)\.css$/,
           use: [
             MiniCssExtractPlugin.loader, // javascriptとしてバンドルせず cssファイル として出力する
             {
@@ -105,7 +106,8 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.js$/,
-          exclude: /node_modules/,
+          // exclude: /node_modules/,
+          exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
           use: [
             {
               loader: 'babel-loader',

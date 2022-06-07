@@ -2,7 +2,7 @@ import $ from 'jquery'
 
 export default class Anime {
   constructor() {
-    console.log('home!!');
+    console.log('Anime!!');
   }
 }
 
@@ -31,14 +31,14 @@ $(".js-blackOut").click(function () {
 // =========================
 // スライドショー
 // =========================
-function slider(){
-  const current = $('.js-slider.is-current'),
-  next = current.is(':last-child') ?
-  $('.js-slider').first() : current.next();
-  next.addClass('is-current');
-  current.removeClass('is-current');
-}
-setInterval(slider, 5000);
+// function slider(){
+//   const current = $('.js-slider.is-current'),
+//   next = current.is(':last-child') ?
+//   $('.js-slider').first() : current.next();
+//   next.addClass('is-current');
+//   current.removeClass('is-current');
+// }
+// setInterval(slider, 5000);
 
 // =========================
 // tab切り替え

@@ -5,6 +5,5 @@ import '../css/app.css'
 $(() => {
   new router();
 
-  const hoge = 'hoge'
-  console.log(hoge)
+  console.log("entry")
 })

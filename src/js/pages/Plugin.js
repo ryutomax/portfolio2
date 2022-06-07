@@ -1,23 +1,19 @@
-import Swiper from 'swiper';
-// import Swiper styles
+import Swiper from 'swiper/swiper-bundle';
 import 'swiper/swiper-bundle.css';
 
 export default class Plugin {
   constructor() {
-    console.log('home!!');
+    console.log('Plugin!!');
   }
 }
 
 const mySwiper = new Swiper('.swiper-container', { // eslint-disable-line
-  speed: 7000,
-  // slidesPerView: 'auto',
-  slidesPerView: 3,   //小数点停止？スライド見切れ
+  speed: 2000,
+  slidesPerView: '1',
+  effect: 'fade',
   loop: true,
   autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-      stopOnLastSlide: false,
-  },
+    delay: 3000,
+    disableOnInteraction: false,
+  }
 })
-
-mySwiper();

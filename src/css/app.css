@@ -12,6 +12,7 @@ html {
   background: #FFF;
   color: #000;
 }
+
 /*
 	TODO remove settings on BODY since we can't namespace it.
 */
@@ -1150,7 +1151,6 @@ body {
 }
 .p-topSlider {
   position: relative;
-  height: 650px;
 }
 .p-topSlider__symbol {
   position: absolute;
@@ -1161,21 +1161,14 @@ body {
 }
 .p-topSlider__list {
   position: relative;
-  height: 100%;
-  padding-bottom: 100%;
-  overflow: hidden;
+  height: 650px;
 }
 .p-topSlider__item {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
 }
 .p-topSlider__item:nth-child(1) {
   background-image: url("../../assets/images/slide/slide_1_sp.jpg");
@@ -1186,6 +1179,18 @@ body {
 .p-topSlider__item:nth-child(3) {
   background-image: url("../../assets/images/slide/slide_3_sp.jpg");
 }
+.p-topSlider__item:nth-child(4) {
+  background-image: url("../../assets/images/slide/slide_1_sp.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.p-topSlider__item:nth-child(5) {
+  background-image: url("../../assets/images/slide/slide_2_sp.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 @media print, screen and (min-width:415px) {
   .p-topSlider__symbol {
@@ -1193,21 +1198,13 @@ body {
   }
 }
 @media print, screen and (min-width:769px) {
-  .p-topSlider {
-    height: 100vh;
-    overflow: hidden;
-  }
   .p-topSlider__list {
-    position: relative;
-    height: 100%;
-    padding-bottom: 100vh;
-    overflow: hidden;
+    height: 100vh;
   }
   .p-topSlider__item {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: opacity 0.3s ease-in-out;
   }
   .p-topSlider__item:nth-child(1) {
     background-image: url("../../assets/images/slide/slide_1.jpg");
@@ -1217,6 +1214,12 @@ body {
   }
   .p-topSlider__item:nth-child(3) {
     background-image: url("../../assets/images/slide/slide_3.jpg");
+  }
+  .p-topSlider__item:nth-child(4) {
+    background-image: url("../../assets/images/slide/slide_1.jpg");
+  }
+  .p-topSlider__item:nth-child(5) {
+    background-image: url("../../assets/images/slide/slide_2.jpg");
   }
 }
 .u-br__o-tb {

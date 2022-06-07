@@ -11,7 +11,7 @@
 
 <div class="js-blackOut"></div>
 
-<div class="p-topSlider">
+<!-- <div class="p-topSlider">
   <img src="<%= path %>symbol_white.svg" alt="メインロゴ" class="p-topSlider__symbol u-z-index1">
   <ul class="p-topSlider__list">
     <% const slide = [
@@ -23,8 +23,28 @@
       <li class="p-topSlider__item js-slider <%= slide[i].current %>"></li>
     <% } %>
   </ul>
+</div> -->
+<!-- /.p-topSlider -->
+
+<div class="p-topSlider">
+  <img src="<%= path %>symbol_white.svg" alt="メインロゴ" class="p-topSlider__symbol u-z-index10">
+  <div class="swiper-container">
+    <ul class="p-topSlider__list swiper-wrapper">
+      <% const slide2 = [
+        {current: "is-current"},
+        {current: ""},
+        {current: ""}
+      ]; %>
+      <% for(var i = 0; i < slide.length; i++) { %>
+        <li class="p-topSlider__item js-slider swiper-slide"></li>
+      <% } %>
+    </ul>
+  </div>
+  <!-- /.swiper-container -->
 </div>
 <!-- /.p-topSlider -->
+
+
 
 <div class="p-intro c-secFrame">
   <div class="p-intro__inner">
